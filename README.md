@@ -10,7 +10,13 @@ If you run into any issues, please open an issue! :)
 
 ### Installation
 
-1. Install Blender
+1. Clone the repo
+
+```bash
+git clone https://github.com/ArghyaChatterjee/objaverse-rendering.git
+```
+
+2. Install Blender
 
 ```bash
 wget https://download.blender.org/release/Blender3.2/blender-3.2.2-linux-x64.tar.xz
@@ -18,7 +24,7 @@ tar -xf blender-3.2.2-linux-x64.tar.xz
 rm blender-3.2.2-linux-x64.tar.xz
 ```
 
-2. Update certificates for Blender to download URLs
+3. Update certificates for Blender to download URLs
 
 ```bash
 # this is needed to download urls in blender
@@ -27,13 +33,17 @@ sudo update-ca-certificates --fresh
 export SSL_CERT_DIR=/etc/ssl/certs
 ```
 
-3. Install Python dependencies
+4. Install Python dependencies
 
 ```bash
-pip install -r requirements.txt
+cd objaverse-rendering
+python3 -m venv objaverse_rendering_venv
+source objaverse_rendering_venv/bin/activate
+pip3 install --upgrade pip
+pip3 install -r requirements.txt 
 ```
 
-4. (Optional) If you are running rendering on a headless machine, you will need to start an xserver. To do this, run:
+5. (Optional) If you are running rendering on a headless machine, you will need to start an xserver. To do this, run:
 
 ```bash
 sudo apt-get install xserver-xorg
